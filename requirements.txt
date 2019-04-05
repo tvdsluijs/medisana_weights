@@ -1,0 +1,2 @@
+beautifulsoup4
+validate_email==1.3
