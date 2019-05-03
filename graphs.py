@@ -19,7 +19,11 @@ class CreateGraphs:
         self.mathlib_pie_chart()
         self.mathlib_pie_charts()
         self.basic_bar_chart()
-        
+
+        self.basic_Line_chart()
+        self.basic_Line_chart('No')
+
+
     def mathlib_pie_chart(self):
         labels = 'bodyFat','muscleMass','boneMass','bodyWater'
         colors = ['#f9ca2f', '#e2310d', '#f4f6f7', '#2285f7']
@@ -55,7 +59,7 @@ class CreateGraphs:
   
             ax = axes[i // 3, i % 3]
             ax.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%',
-                shadow=True, startangle=90)
+                   shadow=True, startangle=90)
 
             ts = int(str(w['x'])[:-3])
             date = datetime.utcfromtimestamp(ts).strftime('%d-%m-%Y')
@@ -64,25 +68,54 @@ class CreateGraphs:
         fig.subplots_adjust(wspace=.2)
         plt.savefig('images/pie-charts.png')
         print('done')
-        
-    def basic_bar_chart(self):
-        names = []
+
+    def basic_Line_chart(self, all=None):
+        # Data for plotting
+        dates = []
         values = []
-        
-        data = {'apples': 10, 'oranges': 15, 'lemons': 5, 'limes': 20}
-        names = list(data.keys())
-        values = list(data.values())
-        
+        data = self.weight_data['bodyWeight']
+        i = 0
+        for w in data:
+            if all is not None:
+                if w['x'] < self.first_date:
+                    continue
+
+            ts = int(str(w['x'])[:-3])
+            if i == 0:
+                month_year = datetime.utcfromtimestamp(ts).strftime('%m-%Y')
+                i = 1
+
+            date = datetime.utcfromtimestamp(ts).strftime('%d-%m-%Y')
+            dates.append(date)
+            values.append(w['y'])
+
+        fig = plt.figure(figsize=(10, 6))
+        ax = fig.add_subplot(111)
+        plt.xticks(rotation=70)
+        plt.subplots_adjust(hspace=0, bottom=0.3)
+        ax.plot(dates, values)
+
+        ax.set(xlabel='Dates', ylabel='Weight (kg)',
+               title='About as simple as it gets, folks')
+
+        ax.grid()
+        fig.savefig("images/linechart_{}.png".format(month_year))
+
+    def basic_bar_chart(self):
+        dates = []
+        values = []
+
         data = self.weight_data['bodyWeight']
         for w in data[-5:]:
-        
-        
-        
+            ts = int(str(w['x'])[:-3])
+            date = datetime.utcfromtimestamp(ts).strftime('%d-%m-%Y')
+            dates.append(date)
+            values.append(w['y'])
         
         fig, axs = plt.subplots(1, 3, figsize=(9, 3), sharey=True)
-        axs[0].bar(names, values)
-        axs[1].scatter(names, values)
-        axs[2].plot(names, values)
+        axs[0].bar(dates, values)
+        axs[1].scatter(dates, values)
+        axs[2].plot(dates, values)
         fig.suptitle('Categorical Plotting')
         plt.savefig('images/charts.png')
     

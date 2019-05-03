@@ -5,7 +5,6 @@ logging/*
 config/*
 !config/config_sample.yml
 data/*
-imagess/*
 mail-attachments/
 mail-attachments/*
 functions/__pycache__/
