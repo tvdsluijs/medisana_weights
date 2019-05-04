@@ -23,6 +23,8 @@ description: This is an example page of graphs created with my python script tha
 
 # List of links in the navigation bar
 navbar-links:
+  Data: "data"
+  Graphs: "graphs"
   About Me: "aboutme"
   Author's home: "https://www.itheo.nl"
 

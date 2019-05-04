@@ -11,7 +11,7 @@ class CreateGraphs:
         dir_path = os.path.dirname(os.path.realpath(__file__))
         folder = os.path.join(dir_path, "data")
         data_file_name = "{}_weights.json".format(self.datum)
-        self.data_file =  os.path.join(folder, data_file_name)
+        self.data_file = os.path.join(folder, data_file_name)
         
         self.first_date = 1554576328000
         
@@ -32,13 +32,12 @@ class CreateGraphs:
                   self.weight_data['lastval_boneMass'], 
                   self.weight_data['lastval_bodyWater']]
         explode = (0.1, 0, 0, 0)  # only "explode" the 1nd slice (i.e. 'Fat')
-        
-        # fig1, ax1 = plt.subplots()
-        fig1, ax1 = plt.subplots()        
+
+        fig1, ax1 = plt.subplots()
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
                 colors=colors, shadow=True, startangle=90)
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-               
+        plt.title(self.weight_data['lastMeasurementDate'])
         plt.savefig('images/pie-chart.png')
         
         

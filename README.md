@@ -63,7 +63,7 @@ Matplotlib is a Python 2D plotting library which produces publication quality fi
 
 https://matplotlib.org/
 
-## Help
+### Help
 
 Are you in need of help? Open slack and go to:
 
@@ -71,10 +71,17 @@ https://pure-python.slack.com
 
 You will find more about this project in:
 
-[#medisanaweights](https://pure-python.slack.com/messages/CJC32LLH2/)
+[#medisanaweights](https://pure-python.slack.com/messages/CJD4MS692)
 
+### Site
 
-## License
+You can find my medisana graphs on
+
+https://www.itheo.com/medisana_weights
+
+The site is made with https://github.com/daattali/beautiful-jekyll#readme
+
+### License
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 
 @[Theo van der Sluijs](mailto:theo@vandersluijs.nl)
