@@ -23,10 +23,10 @@ description: This is an example page of graphs created with my python script tha
 
 # List of links in the navigation bar
 navbar-links:
+  Home: "/medisana_weights"
   Data: "data"
   Graphs: "graphs"
   About Me: "aboutme"
-  Author's home: "https://www.itheo.nl"
 
 #  Resources:
 #    - Learn markdown: "http://www.markdowntutorial.com/"

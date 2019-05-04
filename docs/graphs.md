@@ -4,7 +4,7 @@ title: Graphs
 subtitle: Data output in graphs
 ---
 
-So the Data from Medisana (like in the [data link](/data)) can be easily put to nice graphs with the matplotlib library.
+So the Data from Medisana (like in the [data link]({site.baseurl}/data)) can be easily put to nice graphs with the matplotlib library.
 
 First load the library in your python script
 
