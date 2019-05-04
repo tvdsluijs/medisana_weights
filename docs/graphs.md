@@ -75,4 +75,6 @@ Just put the labels in, then get the sizes from the self.weight_data variable pu
 {% endhighlight %}
 
 
+![Pie Charts](docs/graphs/pie-charts.png)
+![Line Chart](docs/graphs/linechart_04-2019.png)
 

@@ -7,37 +7,37 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {% if site.title-img %}
+      {%- if site.title-img %}
         <a class="navbar-brand navbar-brand-logo" href="{{ site.url }}/{ site.baseurl }"><img src="{{ site.title-img }}"/></a>
-      {% else %}
-        <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
-      {% endif %}
+      {%- else %}
+        <a class="navbar-brand" href="{{ site.url }}/{ site.baseurl }">{{ site.title }}</a>
+      {%- endif %}
     </div>
 
     <div class="collapse navbar-collapse" id="main-navbar">
       <ul class="nav navbar-nav navbar-right">
-      {% for link in site.navbar-links %}
-        {% if link[1].first %}
+      {%-for link in site.navbar-links %}
+        {%- if link[1].first %}
           <li class="navlinks-container">
             <a class="navlinks-parent" href="javascript:void(0)">{{ link[0] }}</a>
             <div class="navlinks-children">
-              {% for childlink in link[1] %}
-                {% for linkparts in childlink %}
+              {%- for childlink in link[1] %}
+                {%- for linkparts in childlink %}
                   {% include navbarlink.html link=linkparts %}
-                {% endfor %}
-              {% endfor %}
+                {%- endfor %}
+              {%- endfor %}
             </div>
           </li>
-        {% else %}
+        {%- else %}
           <li>
             {% include navbarlink.html link=link %}
           </li>
-        {% endif %}
-        {% endfor %}
+        {%- endif %}
+        {%- endfor %}
       </ul>
     </div>
 
-	{% if page.image and (layout.show-avatar or page.show-avatar) %}
+	{%- if page.image and (layout.show-avatar or page.show-avatar) %}
 	<div class="avatar-container">
 	  <div class="avatar-img-border">
 	    <a href="{{ site.url }}">
@@ -45,7 +45,7 @@
 		</a>
 	  </div>
 	</div>
-	{% elsif site.avatar and (layout.show-avatar or page.show-avatar) %}
+	{%- elsif site.avatar and (layout.show-avatar or page.show-avatar) %}
 	<div class="avatar-container">
 	  <div class="avatar-img-border">
 	    <a href="{{ site.url }}">
@@ -53,7 +53,6 @@
 		</a>
 	  </div>
 	</div>
-	{% endif %}
-
+	{%- endif %}
   </div>
 </nav>
