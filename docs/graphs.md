@@ -45,5 +45,29 @@ So now you have the json data in the var weight_data.
 ### Pie chart current data
 
 So lets get the current situation (last weighting) into a nice pie graph.
+![Pie Chart](graphs/pie-chart.png)
+
+Its actually very easy to create this pie chart.
+
+Just put the labels in, then get the sizes from the self.weight_data variable put it together with a nice title. And voila!
+
+```python
+    def mathlib_pie_chart(self):
+        labels = 'bodyFat','muscleMass','boneMass','bodyWater'
+        colors = ['#f9ca2f', '#e2310d', '#f4f6f7', '#2285f7']
+        sizes = [self.weight_data['lastval_bodyFat'], 
+                  self.weight_data['lastval_muscleMass'], 
+                  self.weight_data['lastval_boneMass'], 
+                  self.weight_data['lastval_bodyWater']]
+        explode = (0.1, 0, 0, 0)  # only "explode" the 1nd slice (i.e. 'Fat')
+
+        fig1, ax1 = plt.subplots()
+        ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+                colors=colors, shadow=True, startangle=90)
+        ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+        plt.title(self.weight_data['lastMeasurementDate'])
+        plt.savefig('images/pie-chart.png')
+```
+
 
 

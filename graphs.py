@@ -1,7 +1,7 @@
 import os
 import json
 from datetime import date, datetime
-
+from medisana import Medisana
 import matplotlib.pyplot as plt
 
 class CreateGraphs:
@@ -23,7 +23,6 @@ class CreateGraphs:
         self.basic_Line_chart()
         self.basic_Line_chart('No')
 
-
     def mathlib_pie_chart(self):
         labels = 'bodyFat','muscleMass','boneMass','bodyWater'
         colors = ['#f9ca2f', '#e2310d', '#f4f6f7', '#2285f7']
@@ -39,7 +38,6 @@ class CreateGraphs:
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         plt.title(self.weight_data['lastMeasurementDate'])
         plt.savefig('images/pie-chart.png')
-        
         
     def mathlib_pie_charts(self):
         labels = 'bodyFat','muscleMass','boneMass','bodyWater'
@@ -121,9 +119,13 @@ class CreateGraphs:
     def open_file_with_contents(self, file=None):
         if file is not None:
             self.data_file = file
-            
+
+        if not os.path.isfile(self.data_file):
+            Medisana() # get the data for today
+
         with open(self.data_file, 'r') as json_file:
             return json.load(json_file)
+
 
 if __name__ == '__main__':
     c = CreateGraphs()

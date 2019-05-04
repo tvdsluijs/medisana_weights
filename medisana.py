@@ -6,6 +6,7 @@ import json
 from datetime import date
 from functions.readConfig import readConfig
 
+
 class Medisana:
     def __init__(self):
 
@@ -16,7 +17,7 @@ class Medisana:
         dir_path = os.path.dirname(os.path.realpath(__file__))
         folder = os.path.join(dir_path, "data")
         data_file_name = "{}_weights.json".format(self.datum)
-        self.data_file =  os.path.join(folder, data_file_name)
+        self.data_file = os.path.join(folder, data_file_name)
         
         self.weight_data = {}
         
@@ -26,7 +27,6 @@ class Medisana:
         self.weight_json = "https://cloud.vitadock.com/portal/server/target_server.php?lang=nl_NL&rnd=12345"
 
         self.get_data()
-
 
     def get_data(self, file=None):
         if file is not None:
@@ -78,6 +78,7 @@ class Medisana:
 
         with open(self.data_file, 'w+') as output:
             json.dump(self.weight_data, output)
+
 
 if __name__ == '__main__':
     m = Medisana()
