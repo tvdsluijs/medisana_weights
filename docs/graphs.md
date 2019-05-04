@@ -4,9 +4,14 @@ title: Graphs
 subtitle: Data output in graphs
 ---
 
-So the Data from Medisana (like in the [data link](/medisana_weights/data)) can be easily put to nice graphs with the matplotlib library.
+So the data from Medisana (like in the [data link](/medisana_weights/data)) can be easily put to nice graphs with the matplotlib library.
 
-First load the library in your python script
+{: .box-error}
+**Error:** Looking at my data can cause instant weightloss.
+
+> Just kidding
+
+First load the library in your python script.
 
 ```python
 import matplotlib.pyplot as plt
