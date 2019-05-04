@@ -23,7 +23,7 @@ description: This is an example page of graphs created with my python script tha
 
 # List of links in the navigation bar
 navbar-links:
-  Home: "/medisana_weights"
+  Home: ""
   Data: "data"
   Graphs: "graphs"
   About Me: "aboutme"
