@@ -4,7 +4,7 @@ title: Graphs
 subtitle: Data output in graphs
 ---
 
-So the Data from Medisana (like in the [data link]({site.baseurl}/data)) can be easily put to nice graphs with the matplotlib library.
+So the Data from Medisana (like in the [data link](/medisana_weights/data)) can be easily put to nice graphs with the matplotlib library.
 
 First load the library in your python script
 
@@ -26,7 +26,7 @@ And then you can start using it!
 
 You can easily grab the last json file by
 
-```python
+{% highlight python linenos %}
     def __init__(self):
         self.datum = '{:%d-%b-%Y}'.format(date.today())
 
@@ -37,7 +37,7 @@ You can easily grab the last json file by
 
         with open(self.data_file, 'r') as json_file:
             self.weight_data = json.load(json_file)
-```
+{% endhighlight %}
 
 So now you have the json data in the var weight_data.
 
@@ -51,7 +51,7 @@ Its actually very easy to create this pie chart.
 
 Just put the labels in, then get the sizes from the self.weight_data variable put it together with a nice title. And voila!
 
-```python
+{% highlight python linenos %}
     def mathlib_pie_chart(self):
         labels = 'bodyFat','muscleMass','boneMass','bodyWater'
         colors = ['#f9ca2f', '#e2310d', '#f4f6f7', '#2285f7']
@@ -67,7 +67,7 @@ Just put the labels in, then get the sizes from the self.weight_data variable pu
         ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
         plt.title(self.weight_data['lastMeasurementDate'])
         plt.savefig('images/pie-chart.png')
-```
+{% endhighlight %}
 
 
 

@@ -35,7 +35,7 @@ The json you get out of the python script is like this
 
 Trust me, there is more data, this is just part of the data.
 
-You can find a complete data file on the [data]({site.baseurl}/data) page
+You can find a complete data file on the [data](/medisana_weights/data) page
 
 
 **Here is some bold text**
