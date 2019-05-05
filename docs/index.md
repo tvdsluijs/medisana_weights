@@ -5,7 +5,7 @@ subtitle: This is where I will tell the world way too much about me
 use-site-title: true
 ---
 
-A colleague told me that they and their team had a common challenge. Lose weight as much as possible between April and December.
+A colleague told me that he and his team had a common challenge. Lose weight as much as possible between April and December.
 
 He told me that he was not yet able to do it, but was going to do everything to lose weight.
 
@@ -17,7 +17,7 @@ Challenge accepted !!
 
 ## Medisana VitaDock and Scale
 
-I've got this medisana scale that uploads my data into the Medisana VitaDock Cloud. That environment had a API but that does not work anymore.
+I've got this Medisana scale that uploads my data into the Medisana VitaDock Cloud. That environment had a API but that does not work anymore.
 
 They still have the VitaDock online portal, but I wanted direct access to my own data.
 
@@ -81,4 +81,11 @@ Next to that use the normal field (username, password & button) to login into th
 
 With all these pages I also grab the user cookie sessions with the code `requests.Session()`
 
- 
+Complicated..... YES! 
+But I did all the work for you.
+
+So just grab my [repository](https://github.com/tvdsluijs/medisana_weights) and 
+
+`python medisana.py`
+
+Oh... don't forget to create a config.yml file in the config folder with your login credentials.
