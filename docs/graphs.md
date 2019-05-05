@@ -64,7 +64,7 @@ Just put the labels in, then get the sizes from the self.weight_data variable pu
                   self.weight_data['lastval_muscleMass'], 
                   self.weight_data['lastval_boneMass'], 
                   self.weight_data['lastval_bodyWater']]
-        explode = (0.1, 0, 0, 0)  # only "explode" the 1nd slice (i.e. 'Fat')
+        explode = (0.1, 0, 0, 0)
 
         fig1, ax1 = plt.subplots()
         ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
@@ -75,6 +75,6 @@ Just put the labels in, then get the sizes from the self.weight_data variable pu
 {% endhighlight %}
 
 
-![Pie Charts](docs/graphs/pie-charts.png)
-![Line Chart](docs/graphs/linechart_04-2019.png)
-
+![Pie Charts](graphs/pie-charts.png)
+![Line Chart](graphs/linechart_04-2019.png)
+![Line Chart](graphs/gauge.png)

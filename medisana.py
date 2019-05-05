@@ -5,7 +5,7 @@ import json
 
 from datetime import date
 from functions.readConfig import readConfig
-
+from functions.creategraphs import CreateGraphs
 
 class Medisana:
     def __init__(self):
@@ -82,3 +82,5 @@ class Medisana:
 
 if __name__ == '__main__':
     m = Medisana()
+    c = CreateGraphs()
+    c.copy_graphs()
