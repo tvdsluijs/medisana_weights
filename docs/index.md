@@ -35,68 +35,50 @@ The json you get out of the python script is like this
 
 Trust me, there is more data, this is just part of the data.
 
-You can find a complete data file on the [data](/medisana_weights/data) page
+You can find a complete data file on the [data]({{ site.baseurl }}/data) page
 
+## How does it work
 
-**Here is some bold text**
+To get the data from the Medisana Vita Dock site I had to do some steps in order to get it.
 
-## Here is a secondary heading
+In short my python script should:
+1. Go to the login page to get a hidden secret key (the is regenerated every so many minutes)
+2. Login to the page, together with the hidden secret key, and data from some other hidden fields
+3. Go to the weights page where the the data was beeing generated 
+4. Go to the url where the actual data is
 
-Here's a useless table:
+Maybe there is an easier way... but I did not find it yet!
 
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
+I use these urls to get to the data
 
+- https://cloud.vitadock.com/signin
+- https://cloud.vitadock.com/resources/j_spring_security_check
+- https://cloud.vitadock.com/portal/target.php?lang=nl_NL
+- https://cloud.vitadock.com/portal/server/target_server.php?lang=nl_NL&rnd=12345
 
-How about a yummy crepe?
+To get to the data I use to libraries from pip
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+* requests
+* BeautifulSoup
 
-Here's a code chunk:
+You can install them easily by:
 
-~~~
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-~~~
-
-And here is the same code with syntax highlighting:
-
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
+```bash
+pip install requests
+pip install beautifulsoup4
 ```
 
-And here is the same code yet again but with line numbers:
+With beautifulsoup I get the so called secret key from the signin page:
 
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
+The field is called: `_csrf`
 
-## Boxes
-You can add notification, warning and error boxes like this:
+The other hidden fields grab and use to login are: 
+- oauth_token
+- marketingid
+- code
 
-### Notification
+Next to that use the normal field (username, password & button) to login into the j_spring_security_check page.
 
-{: .box-note}
-**Note:** This is a notification box.
+With all these pages I also grab the user cookie sessions with the code `requests.Session()`
 
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
+ 

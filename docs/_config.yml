@@ -107,9 +107,9 @@ url-pretty: "itheo.nl"  # eg. "deanattali.com/beautiful-jekyll"
 
 # Fill in your Google Analytics gtag.js ID to track your website using gtag
 #gtag: ""
-
+#
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: UA-1497722-35
 
 # Google Tag Manager ID
 #gtm: ""

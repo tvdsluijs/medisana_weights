@@ -58,7 +58,7 @@ class Medisana:
     
         csrf = soup.find('input', {'name': '_csrf'}).get('value')   # get the csrf data from the input field
 
-        data = {"j_username": self.config['username'], "j_password": self.config['password'], "_spring_security_remember_me": "", "oauth_token": "", "marketingid": "", "code": "", "loginBtn": "Log in", "_csrf": csrf  }
+        data = {"j_username": self.config['username'], "j_password": self.config['password'], "_spring_security_remember_me": "", "oauth_token": "", "marketingid": "", "code": "", "loginBtn": "Log in", "_csrf": csrf}
         
         r = s.post(self.login_url, data=data)   #login to the site
         r = s.get(self.weight_page)  # get the weight page, needed before you can grab the json
