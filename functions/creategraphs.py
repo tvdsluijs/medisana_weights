@@ -24,6 +24,7 @@ class CreateGraphs:
         self.mathlib_pie_charts()
         self.basic_bar_chart()
         self.create_gauge()
+        self.create_bmi()
         self.basic_Line_chart()
         self.basic_Line_chart('No')
 
@@ -39,8 +40,37 @@ class CreateGraphs:
         filename = os.path.join(self.image_folder, "gauge.png")
         g.gauge(labels=my_labels,
                 colors=['#45ed08', '#8ded08', '#c3ed08', '#e9ed09', '#eda808', '#ed6308', '#ba1010'],
-                arrow=my_arrow, title='Bijna op gewicht?', fname=filename)
+                arrow=my_arrow, title="{} Kg".format(self.weight_data['lastval']), fname=filename)
 
+    def create_bmi(self):
+
+        g = Gauge()
+        my_labels = ['Ondergewicht', 'Gezond gewicht', 'Overgewicht', 'Obesitas']
+
+        bmi = self.weight_data['lastval_bmi']
+
+        print(bmi)
+
+        if bmi < 18.5:
+            my_arrow = 1
+        elif 18.5 < bmi < 24.9:
+            my_arrow = 2
+        elif 24.9 < bmi < 29.9:
+            my_arrow = 3
+        elif bmi >= 30:
+            my_arrow = 4
+        else:
+            return
+
+        # Minder dan 18,5 = ondergewicht
+        # Tussen 18,5 en 24,9 = gezond normaal gewicht
+        # Tussen 25 en 29,9 = overgewicht
+        # Meer dan 30 = Obesitas
+
+        filename = os.path.join(self.image_folder, "bmi.png")
+        g.gauge(labels=my_labels,
+                colors=['#f2491a', '#36ce33', '#f1b119', '#f2491a'],
+                arrow=my_arrow, title='BMI {}'.format(bmi), fname=filename)
 
     def mathlib_pie_chart(self):
         labels = 'bodyFat', 'muscleMass', 'boneMass', 'bodyWater'

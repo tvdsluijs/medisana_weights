@@ -78,3 +78,4 @@ Just put the labels in, then get the sizes from the self.weight_data variable pu
 ![Pie Charts](graphs/pie-charts.png)
 ![Line Chart](graphs/linechart_04-2019.png)
 ![Line Chart](graphs/gauge.png)
+![Line Chart](graphs/bmi.png)
