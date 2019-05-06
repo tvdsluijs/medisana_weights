@@ -1,5 +1,14 @@
-import os, sys
-import matplotlib
+'''
+Small class to create a Gauge with Matplotlib
+
+Original code from
+http://nicolasfauchereau.github.io/climatecode/posts/drawing-a-gauge-with-matplotlib/
+https://github.com/nicolasfauchereau
+
+He did all the work, I just created a Class out of it.
+
+'''
+
 from matplotlib import cm
 from matplotlib import pyplot as plt
 import numpy as np
@@ -127,4 +136,4 @@ if __name__ == '__main__':
     myArrow = myLabels.index('79')+1
     g.gauge(labels=myLabels,
             colors=['#45ed08', '#8ded08', '#c3ed08', '#e9ed09', '#eda808', '#ed6308', '#ba1010'],
-            arrow=myArrow, title='Bijna op gewicht', fname="theo.png")
+            arrow=myArrow, title='Just a number', fname="gauge.png")
