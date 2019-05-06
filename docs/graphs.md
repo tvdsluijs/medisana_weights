@@ -115,6 +115,12 @@ And what is even better than showing a pie chart? Yes! Showing mutiple pie chart
 
 ## Line chart from certain date
 
+So I've been using my Medisana Scale since 2015. But I do not want to show all the data from that point. As it will become an unreadable chart.
+
+So I use the data I want to show from a certain date. Unixtimestamp to be clear.
+
+The `self.first_date` is a unix timestamp set on init and can be used throughout the script.
+
 ![matplotlib Line Chart](graphs/linechart_04-2019.png)
 
 {% highlight python linenos %}
@@ -216,3 +222,8 @@ So here's another nice Gauge telling if my BMI is okay or not.
                 colors=['#f2491a', '#36ce33', '#f1b119', '#f2491a'],
                 arrow=my_arrow, title='BMI {}'.format(bmi), fname=filename)
 {% endhighlight %}
+
+Questions? You can always send me an [email](mailto:theo@vandersluijs.nl)
+
+Like my script? Buy me a coffee and make me happy!
+<a href="https://www.buymeacoffee.com/itheo" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy me a coffee" style="height: auto !important;width: auto !important;" ></a>
