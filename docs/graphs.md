@@ -52,7 +52,7 @@ So now you have the json data in the var weight_data.
 ### Pie chart current data
 
 So lets get the current situation (last weighting) into a nice pie graph.
-![Pie Chart](graphs/pie-chart.png)
+![matplotlib Pie Chart](graphs/pie-chart.png)
 
 Its actually very easy to create this pie chart.
 
@@ -82,7 +82,7 @@ Showing in a Pie what the measurements of water, fat, bones and muscle is, is in
 
 And what is even better than showing a pie chart? Yes! Showing mutiple pie charts.
 
-![Pie Charts](graphs/pie-charts.png)
+![matplotlib Pie Charts](graphs/pie-charts.png)
 
 {% highlight python linenos %}
     def mathlib_pie_charts(self):
@@ -115,7 +115,7 @@ And what is even better than showing a pie chart? Yes! Showing mutiple pie chart
 
 ## Line chart from certain date
 
-![Line Chart](graphs/linechart_04-2019.png)
+![matplotlib Line Chart](graphs/linechart_04-2019.png)
 
 {% highlight python linenos %}
     def basic_Line_chart(self, all=None):
@@ -159,9 +159,9 @@ So you can show your weight in a bar or line chart. But it might be nicer to sho
 
 That is why I'm using a Guage with 75 as my target and 81 where I came from.
 
-![Line Chart](graphs/gauge.png)
+![matplotlib Weight Gauge Chart](graphs/gauge.png)
 
-I found this Gauge creation script on internet and I created my own class out of it.
+I found this Gauge creation script on internet and I created my own [class out](https://gist.github.com/tvdsluijs/5c64845a67df6288126de624dcc22756) of it.
 
 {% highlight python linenos %}
     def create_gauge(self):
@@ -183,7 +183,7 @@ I found this Gauge creation script on internet and I created my own class out of
 
 So here's another nice Gauge telling if my BMI is okay or not.
 
-![Line Chart](graphs/bmi.png)
+![matplotlib BMI Gauge Chart](graphs/bmi.png)
 
 {% highlight python linenos %}
     def create_bmi(self):
