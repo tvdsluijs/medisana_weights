@@ -92,4 +92,4 @@ So just grab my [repository](https://github.com/tvdsluijs/medisana_weights) and
 
 `python medisana.py`
 
-Oh... don't forget to create a config.yml file in the config folder with your login credentials. There is a sample file
+Oh... don't forget to create a config.yml file in the config folder with your login credentials. There is a sample file you can use.
